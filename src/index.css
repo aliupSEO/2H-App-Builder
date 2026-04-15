@@ -46,6 +46,16 @@
     --radius-2xl: calc(var(--radius) * 1.8);
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
+    --color-brand: #b6ff1b;
+    --color-brand-foreground: #000000;
+}
+
+@utility bg-glow {
+    background: radial-gradient(circle at center, oklch(0.8 0.2 120 / 0.1) 0%, transparent 70%);
+}
+
+@utility text-glow {
+    text-shadow: 0 0 20px oklch(0.8 0.2 120 / 0.5);
 }
 
 :root {
