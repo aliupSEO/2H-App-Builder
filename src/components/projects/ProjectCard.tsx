@@ -1,6 +1,7 @@
 import type { Project } from "@/types/project";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
   project: Project;
@@ -43,10 +44,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <span>{new Date(project.updatedAt).toLocaleDateString()}</span>
           </div>
           
-          <button className="flex items-center gap-1 text-white/60 hover:text-white text-xs font-medium transition-colors group/btn">
+          <Link 
+            to="/editor" 
+            className="flex items-center gap-1 text-white/60 hover:text-white text-xs font-medium transition-colors group/btn"
+          >
             Open Project
             <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
-          </button>
+          </Link>
         </div>
       </div>
       

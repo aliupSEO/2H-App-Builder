@@ -1,6 +1,7 @@
 import type { Template } from "@/types/template";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface TemplateCardProps {
   template: Template;
@@ -56,11 +57,14 @@ export function TemplateCard({ template }: TemplateCardProps) {
           ))}
         </div>
 
-        <button className="w-full mt-2 py-2.5 rounded-xl bg-white/5 hover:bg-white text-white hover:text-black border border-white/10 hover:border-white transition-all duration-300 flex items-center justify-center gap-2 font-medium text-sm group/btn">
+        <Link 
+          to="/editor" 
+          className="w-full mt-2 py-2.5 rounded-xl bg-white/5 hover:bg-white text-white hover:text-black border border-white/10 hover:border-white transition-all duration-300 flex items-center justify-center gap-2 font-medium text-sm group/btn"
+        >
           <Sparkles className="w-4 h-4 transition-transform group-hover/btn:scale-110" />
           Use Template
           <ChevronRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover/btn:opacity-100 group-hover/btn:translate-x-0 transition-all" />
-        </button>
+        </Link>
       </div>
       
       {/* Hover Glow Effect */}

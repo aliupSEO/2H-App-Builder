@@ -1,7 +1,15 @@
 import { Plus, MessageCircle, Mic, ArrowUp } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { useNavigate } from "react-router-dom";
 
 export function SearchInput() {
+  const navigate = useNavigate();
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && e.currentTarget.value.trim()) {
+      navigate("/editor");
+    }
+  };
   return (
     <div className="relative w-full max-w-2xl group">
       <div className="absolute inset-0 bg-brand/5 blur-2xl group-focus-within:bg-brand/10 transition-colors rounded-full" />
@@ -13,6 +21,7 @@ export function SearchInput() {
         <Input 
           className="bg-transparent border-none focus-visible:ring-0 text-white placeholder:text-white/30 text-lg px-0 h-auto"
           placeholder="Ask anything..."
+          onKeyDown={handleKeyDown}
         />
         
         <div className="flex items-center gap-4">
